@@ -1,5 +1,0 @@
-link = "https://stellarburgers.nomoreparties.site/"
-name = "Kirill"
-email = "kirill_shilov5433@ya.ru"
-password = "asdfgh"
-bad_password = "12345"
