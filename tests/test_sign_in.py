@@ -2,7 +2,6 @@ from utils import *
 from locators import *
 from inputs import *
 
-
 # Вход через 'Войти в аккаунт'
 def test_sign_in_with_button(driver):
     driver.implicitly_wait(3)
@@ -11,7 +10,7 @@ def test_sign_in_with_button(driver):
     driver.find_element(By.XPATH, login_email_field_xpath).send_keys(email)
     driver.find_element(By.XPATH, login_password_field_xpath).send_keys(password)
     driver.find_element(By.XPATH, login_enter_button_xpath).click()
-    WebDriverWait(driver, 10).until(expected_conditions.url_matches(link))
+    WebDriverWait(driver, 10).until(expected_conditions.url_to_be(link))
     assert driver.current_url == link
     
 # Вход через личный кабинет
@@ -23,9 +22,8 @@ def test_sign_in_with_personal_account(driver):
     WebDriverWait(driver, 10).until(expected_conditions.url_changes(cu))
     driver.find_element(By.XPATH, login_email_field_xpath).send_keys(email)
     driver.find_element(By.XPATH, login_password_field_xpath).send_keys(password)
-    cu = driver.current_url
     driver.find_element(By.XPATH, login_enter_button_xpath).click()
-    WebDriverWait(driver, 10).until(expected_conditions.url_changes(cu))
+    WebDriverWait(driver, 10).until(expected_conditions.url_to_be(link))
     assert driver.current_url == link
 
 # Вход через кнопку логина в разделе регистрации
@@ -36,9 +34,8 @@ def test_sign_in_with_registration_section(driver):
     WebDriverWait(driver, 10).until(expected_conditions.url_matches(link + 'login'))
     driver.find_element(By.XPATH, login_email_field_xpath).send_keys(email)
     driver.find_element(By.XPATH, login_password_field_xpath).send_keys(password)
-    cu = driver.current_url
     driver.find_element(By.XPATH, login_enter_button_xpath).click()
-    WebDriverWait(driver, 10).until(expected_conditions.url_changes(cu))
+    WebDriverWait(driver, 10).until(expected_conditions.url_to_be(link))
     assert driver.current_url == link
 
 # Вход через 'Забыл пароль'
@@ -49,8 +46,7 @@ def test_sign_in_with_forgot_password(driver):
     WebDriverWait(driver, 10).until(expected_conditions.url_matches(link + 'login'))
     driver.find_element(By.XPATH, login_email_field_xpath).send_keys(email)
     driver.find_element(By.XPATH, login_password_field_xpath).send_keys(password)
-    cu = driver.current_url
     driver.find_element(By.XPATH, login_enter_button_xpath).click()
-    WebDriverWait(driver, 10).until(expected_conditions.url_changes(cu))
+    WebDriverWait(driver, 10).until(expected_conditions.url_to_be(link))
     assert driver.current_url == link
 

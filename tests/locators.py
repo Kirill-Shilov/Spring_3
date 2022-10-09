@@ -4,7 +4,7 @@ email_xpath = "//label[text()='Email']/following-sibling::input"
 password_xpath = "//label[text()='Пароль']/following-sibling::input"
 register_button_xpath = '//button[@class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa"]'
 account_button_xpath = "//a[@class='AppHeader_header__link__3D_hX'][@href='/account']"
-register_button_xpath = "//a[@href='/register']"
+register_button_xpath = "//form/button[text()='Зарегистрироваться']"
 sign_in_button = "//a[@href='/login']"
 
 #main page
@@ -29,6 +29,7 @@ login_email_field_xpath = "//label[@class='input__placeholder text noselect text
 login_password_field_xpath = "//label[@class='input__placeholder text noselect text_type_main-default'][text()='Пароль']/following-sibling::input"
 login_enter_button_xpath = "//button[@class='button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa']"
 login_forgot_password = "//a[@href='/forgot-password']"
+login_register_button = "//div/p/a[text()='Зарегистрироваться']"
 
 #forgot password
 forgot_password_sign_in_button = "//a[@href='/login']"
